@@ -1,0 +1,30 @@
+<p>task-list works!</p>
+<form #formulario="ngForm" (submit)="onSubmit(formulario.value)">
+
+    <div>
+      <label for="">Titulo</label>
+      <input type="text" name="title" ngModel>
+    </div>
+    <div>
+      <label for="">Descripcion</label>
+      <input type="text" name="description" ngModel>
+    </div>
+    <div>
+      <label for="">Prioridad</label>
+      <select name="priority" ngModel >
+        <option value="0">Level</option>
+        <option value="1">Media</option>
+        <option value="2">Urgente</option>
+      </select>
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+
+
+<ul>
+  <li *ngFor="let task of tasks; let indice = index">
+    {{task.title | uppercase}} -- {{task.descripcion}} - Prioridad: {{task.priority}}
+    <button (click)="onRemove(indice)">Tarea completada</button>
+  </li>
+</ul>
+

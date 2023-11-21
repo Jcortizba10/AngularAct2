@@ -1,0 +1,10 @@
+<h1>ACITVIDAD FINAL DE ANGULAR</h1>
+<mat-list>
+  <mat-list-item *ngFor="let personaje of personajes.results" (click)="openDialog(personaje)">
+    <img matListItemAvatar [src]="personaje.image">
+    <div>
+      {{personaje.name}}
+    </div>
+      status: {{personaje.status}} - especie {{personaje.especies}}
+  </mat-list-item>
+</mat-list>
